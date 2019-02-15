@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<app-new-modal title="Add new user" id_form="newUser"></app-new-modal>
+<app-edit-modal title="Edit user" id_form="editUser" [id_user]="id_user" [userDetails]="userDetails"></app-edit-modal>
+<app-delete-modal title="Delete user" id_form="deleteUser" [id_user]="id_user"></app-delete-modal>
+
+<div id="home-container">
+  <div class="ui grid">
+    <div class="row">
+      <div class="titulo">
+        Manage
+      </div>
+    </div>
+    <div class="row title-bar">
+      <div class="sixteen wide column">
+        <button class="ui right floated positive labeled icon button" (click)="modalNew()" id="btnModalRegistro">
+          <i class="plus icon"></i>
+          New
+        </button>
+      </div>
+    </div>
+    <div class="row title-bar">
+      <div class="sixteen wide column">
+        <div class="ui divider"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="sixteen wide column">
+        <table class="ui selectable very compact celled table" style="width:100%; margin:auto;">
+          <thead>
+          <tr>
+            <th>N</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.desc}}</td>
+            <td>
+              <button [id]="user.id" (click)="modalDelete(user.id)" class="ui icon negative small button"><i class="trash icon"></i></button>
+              <button [id]="user.id"  (click)="modalEdit(user.id)" class="ui icon blue small button"><i class="edit icon"></i></button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

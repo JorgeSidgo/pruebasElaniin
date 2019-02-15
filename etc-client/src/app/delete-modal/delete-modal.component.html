@@ -1,0 +1,18 @@
+<div class="ui modal tiny" id="delete-modal">
+
+  <div class="header">
+    {{title}}
+  </div>
+  <div class="content">
+    Are you sure you want to delete this record?
+    <input type="hidden" [(ngModel)]="id_user" id="delete-field">
+  </div>
+  <div class="actions">
+    <button type="button" (click)="cancel()" class="ui black deny button">
+      Cancel
+    </button>
+    <button type="button" (click)="delete()" id="btnDel" class="ui right red button" >
+      Delete
+    </button>
+  </div>
+</div>

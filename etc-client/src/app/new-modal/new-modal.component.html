@@ -1,0 +1,47 @@
+<div class="ui modal tiny" id="new-modal">
+
+  <div class="header">
+    {{title}}
+  </div>
+  <div class="content">
+    <div [id]="id_form" class="ui form">
+
+      <div class="field">
+        <label>Firstname:</label>
+        <input type="text" [(ngModel)]="user.firstname" class="">
+      </div>
+      <div class="field">
+        <label>Lastname:</label>
+        <input type="text" [(ngModel)]="user.lastname" class="">
+      </div>
+      <div class="field">
+        <label>Username:</label>
+        <input type="text" [(ngModel)]="user.username" class="">
+      </div>
+      <div class="field">
+        <label>Role:</label>
+        <select [(ngModel)]="user.role_id" name="role" id="role" class="ui dropdown">
+          <option value="1">Administrator</option>
+          <option value="2">Colaborator</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="text" [(ngModel)]="user.email" class="">
+      </div>
+      <div class="field">
+        <label>Password:</label>
+        <input type="password" [(ngModel)]="user.password" class="">
+      </div>
+
+    </div>
+  </div>
+  <div class="actions">
+    <button type="button" (click)="cancel()" class="ui black deny button">
+      Cancel
+    </button>
+    <button type="button" (click)="save()" id="btnNew" class="ui right green button" >
+      Save
+    </button>
+  </div>
+</div>

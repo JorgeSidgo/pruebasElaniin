@@ -1,0 +1,27 @@
+<div id="login-container">
+  <div class="frame">
+    <div class="ins-frame">
+      <img src="../../assets/logo.svg" id="logo-login" alt="">
+    </div>
+    <div class="ui form">
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="user icon"></i>
+          <input type="text" [(ngModel)]="email" (keyup.enter)="login()" class="requerido" placeholder="Email">
+        </div>
+      </div>
+      <div style="text-align: right;" class="field">
+        <div class="ui right labeled left icon input">
+          <i class="lock icon"></i>
+          <input type="password" [(ngModel)]="pass" (keyup.enter)="login()" class="requerido" name="pass" id="pass" placeholder="Password">
+        </div>
+      </div>
+      <a id="label-error" style="display: none; margin: 0; text-align:center;" class="ui red fluid large label">Datos
+        Incorrectos</a>
+      <button (click)="login()" style="margin-top: 15px;" class="ui blue fluid button" name="btnLogin" id="btnLogin"
+              type="button">
+        Login
+      </button>
+    </div>
+  </div>
+</div>
